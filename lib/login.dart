@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Cadastros/cadastro.dart';
+import 'widg.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -10,94 +11,111 @@ class login extends StatefulWidget {
 
 class _loginState extends State<login>{
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: const MyStatefulWidget(),
+  Widget fieldCuscuz(){
+    return SizedBox.fromSize(
+      child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          child: Image.asset('assets/couscous.png'),
+        ),
+      ],
+    ),
+    );
+  }
+
+  Widget fieldEmail(){
+    return TextField(
+      decoration: InputDecoration(
+        labelText: 'Email',
+        hintText: 'Joao123@gmail.com',
+        suffixIcon: Icon(Icons.person_outline),
       ),
     );
   }
-}
+  Widget fieldSenhaLogin(){
+    return TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+        fillColor: Colors.blue.shade100,
+        labelText: 'Senha',
+        suffixIcon: Icon(Icons.lock_open),
+      ),
+    );
+  }
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+  Widget fieldBottonLogin(){
+    return ElevatedButton(
+      child: Text(
+        "LOGIN",
+        style: TextStyle(color: Colors.white, fontSize: 18),
+      ),
 
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
+      style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 90.0, vertical: 16.0),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0)
+          ),
+          primary: Color.fromRGBO(73, 39, 196, 1)
+      ),
+      onPressed: () {
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+      },
+    );
+  }
+
+  Widget fieldBottonCadastroLogin(){
+    return ElevatedButton(
+      child: Text(
+        "CADASTRAR",
+        style: TextStyle(color: Colors.white, fontSize: 18),
+      ),
+
+      style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 90.0, vertical: 16.0),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0)
+          ),
+          primary: Color.fromRGBO(73, 39, 196, 1)
+      ),
+      onPressed: () {
+        Navigator.of(context).pushReplacementNamed('/cadastro');
+      },
+    );
+  }
+
+  Widget fieldEsqueciSenha(){
+    return TextButton(
+      onPressed: () {
+      },
+      child: const Text('Esqueci a senha'),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(50),
-        child: ListView(
-          children: <Widget>[
-            Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.fromLTRB(0, 35, 0, 35),
-                child: Image.asset('assets/couscous.png')
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: TextField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                  border: UnderlineInputBorder(),
-                  suffixIcon: Icon(Icons.person),
-                  labelText: 'Email',
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: TextField(
-                obscureText: true,
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  border: UnderlineInputBorder(),
-                  suffixIcon: Icon(Icons.lock_open),
-                  labelText: 'Senha',
-                ),
-              ),
-            ),
-            Container(
-                height: 50,
-                padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                child: ElevatedButton(
-                  child: const Text('Login'),
-                  onPressed: () {
-                  },
-                  style: TextButton.styleFrom(
-                    // shape: ,
-                    backgroundColor: Color.fromARGB(255, 73, 39, 196),
-                  ),
-                )
-            ),Container(
-                height: 50,
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 15),
-                padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                child: ElevatedButton(
-                  child: const Text('Cadastro'),
-                  onPressed: () {
-                  },
-                  style: TextButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 73, 39, 196)
-                  ),
-                )
-            ),
-            TextButton(
-              onPressed: () {
-              },
-              child: const Text('Esqueci a senha'),
-            ),
-          ],
-        ));
+    return Scaffold(
+      body: Center(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children:[
+              fieldCuscuz(),
+              Divider(height: 100,color: Colors.transparent),
+              fieldEmail(),
+              Divider(height: 20,color: Colors.transparent),
+              fieldSenhaLogin(),
+              Divider(height: 70,color: Colors.transparent),
+              fieldBottonLogin(),
+              Divider(height: 20,color: Colors.transparent),
+              fieldBottonCadastroLogin(),
+              Divider(height: 60,color: Colors.transparent),
+              fieldEsqueciSenha()
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

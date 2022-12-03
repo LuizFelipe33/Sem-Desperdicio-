@@ -1,8 +1,10 @@
 import 'Login.dart';
 import 'Cadastros/cadastro.dart';
-import 'Cadastros/cadastroFornecedor.dart';
-import 'Cadastros/cadastroOSC.dart';
+import 'Cadastros/CadastroComum/cadastroComum.dart';
+import 'Cadastros/CadastroFornecedor/cadastroFornecedor.dart';
+import 'Cadastros/CadastroOSC/cadastroOSC.dart';
 import 'package:flutter/material.dart';
+
 
 class AppW extends StatelessWidget{
   @override
@@ -13,8 +15,9 @@ class AppW extends StatelessWidget{
         routes: { 
           '/': (context) => login(),
           '/cadastro': (context) => cadastro(),
-          '/cadastroFornecedor': (context) => cadastroFornecedor(),
-          '/cadastroOSC': (context) => cadastroOSC(),
+          '/cadastroComum': (context) => CadastroComun(),
+          '/cadastroFornecedor': (context) => CadastroFornecedor(),
+          '/cadastroOSC': (context) => CadastroOSC()
         }
       );    
       }

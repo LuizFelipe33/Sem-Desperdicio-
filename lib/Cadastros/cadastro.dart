@@ -6,54 +6,173 @@ class cadastro extends StatefulWidget {
 }
 
 class _cadastroState extends State<cadastro>{
+  @override
 
-    Widget _body(){
-    return SingleChildScrollView(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: ListView(
-          children: [
-            Container(
-          height: 30,
-          ),
-          Row(
-            children: [
-              IconButton(
-                icon: Icon(Icons.arrow_back, color: Color.fromRGBO(223, 128, 33, 1), size: 30,),
-                iconSize: 48,
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed ('/');
-                },),],),
-            Container(
-              height: 20,
-            ),           
+  Widget fieldBottonCadastroComum(){
+    return SizedBox.fromSize(
+      child: Container(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              SizedBox.fromSize(
+                size: Size(140, 140),
+                child: ClipOval(
+                  child: Material(
+                    //color: Color.fromRGBO(73, 39, 196, 1),
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(73, 39, 196, 1),
+                      onTap: () {
+                        Navigator.of(context).pushReplacementNamed('/cadastroComum');
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Usuário/PF",
+                              style: TextStyle(color: Colors.black, fontSize: 15)
+                          ),
+                          Container(
+                            child: Image.asset('pf.png'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
-        )
+        ),
+      ),
     );
-  } 
+  }
 
-  @override
+  Widget fieldBottonCadastroFornecedor(){
+    return Flexible(
+      flex: 2,
+      child: Container(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              SizedBox.fromSize(
+                size: Size(140, 140),
+                child: ClipOval(
+                  child: Material(
+                    //color: Color.fromRGBO(73, 39, 196, 1),
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(73, 39, 196, 1),
+                      onTap: () {
+                        Navigator.of(context).pushReplacementNamed('/cadastroFornecedor');
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            child: Image.asset('pj.png'),
+                          ),
+                          Text("Fornecedor/PJ",
+                              style: TextStyle(color: Colors.black, fontSize: 15)
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget fieldBottonCadastroOSC(){
+    return Flexible(
+      flex: 2,
+      child: Container(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              SizedBox.fromSize(
+                size: Size(140, 140),
+                child: ClipOval(
+                  child: Material(
+                    //color: Color.fromRGBO(73, 39, 196, 1),
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(73, 39, 196, 1),
+                      onTap: () {
+                        Navigator.of(context).pushReplacementNamed('/cadastroOSC');
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            child: Image.asset('ong.png'),
+                          ),
+                          Text("ONG",
+                              style: TextStyle(color: Colors.black, fontSize: 15)
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget barraTitulo(){
+    return ListTile(
+      title: Text("Selecione o tipo de conta que deseja cadastrar",
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
+      ),
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(  
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Color.fromARGB(255, 0, 33, 79),
-                Color.fromARGB(255, 0, 32, 44),
-              ],
-            )
-          ), 
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: Builder(
+            builder: (context) => IconButton(
+              icon: Icon(Icons.arrow_back,
+                  color: Colors.black),
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            ),
+          ),
+          title: Text(
+              'Tipo de conta',
+              style: TextStyle(color: Colors.black)
+          ),
+          centerTitle: true,
         ),
-          _body(),
-        ],
-      )
+
+        body: Center(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
+              children:[
+                barraTitulo(),
+                SizedBox(width: 80,),
+                Divider(height: 100, color: Colors.transparent),
+                fieldBottonCadastroComum(),
+                Divider(height: 50, color: Colors.transparent),
+                Row(
+                  children: [
+                    fieldBottonCadastroFornecedor(),
+                    SizedBox(width: 80,),
+                    fieldBottonCadastroOSC()
+                  ],
+                ),
+              ],
+            ),
+          ),
+        )
     );
   }
 }
