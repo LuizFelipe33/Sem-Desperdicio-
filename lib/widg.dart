@@ -3,6 +3,7 @@ import 'Cadastros/cadastro.dart';
 import 'Cadastros/CadastroComum/cadastroComum.dart';
 import 'Cadastros/CadastroFornecedor/cadastroFornecedor.dart';
 import 'Cadastros/CadastroOSC/cadastroOSC.dart';
+import 'PF/menuPF.dart';
 import 'package:flutter/material.dart';
 
 
@@ -17,7 +18,8 @@ class AppW extends StatelessWidget{
           '/cadastro': (context) => cadastro(),
           '/cadastroComum': (context) => CadastroComun(),
           '/cadastroFornecedor': (context) => CadastroFornecedor(),
-          '/cadastroOSC': (context) => CadastroOSC()
+          '/cadastroOSC': (context) => CadastroOSC(),
+          '/menuPf': (context) => MenuComum()
         }
       );    
       }

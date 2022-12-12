@@ -54,9 +54,7 @@ class _CriarContaState extends State<CriarConta> {
           primary: Color.fromRGBO(73, 39, 196, 1)
       ),
       onPressed: () {
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => CriarConta())
-        );
+        Navigator.of(context).pushReplacementNamed('/menuPf');
       },
     );
   }
