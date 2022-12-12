@@ -81,7 +81,7 @@ static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWei
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Color.fromARGB(255, 135, 34, 217),
+            backgroundColor: Color.fromARGB(255, 110, 25, 180),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
@@ -91,7 +91,7 @@ static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWei
           BottomNavigationBarItem(
             icon: Icon(Icons.monetization_on),
             label: 'Doação',
-            backgroundColor: Color.fromARGB(255, 114, 39, 176),
+            backgroundColor: Color.fromARGB(255, 125, 42, 192),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.location_on),
