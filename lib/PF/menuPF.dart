@@ -81,22 +81,22 @@ static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWei
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Color.fromARGB(255, 110, 25, 180),
+            backgroundColor: Color.fromARGB(255, 78, 42, 208),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Carrinho',
-            backgroundColor: Color.fromARGB(255, 125, 42, 192),
+            backgroundColor: Color.fromARGB(255, 72, 39, 191),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.monetization_on),
             label: 'Doação',
-            backgroundColor: Color.fromARGB(255, 125, 42, 192),
+            backgroundColor: Color.fromARGB(255, 70, 38, 184),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.location_on),
             label: 'Mapa',
-            backgroundColor: Color.fromARGB(255, 102, 35, 157),
+            backgroundColor: Color.fromARGB(255, 64, 35, 167),
           ),
         ],
         currentIndex: _selectedIndex,
