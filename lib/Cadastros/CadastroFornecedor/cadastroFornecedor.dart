@@ -32,12 +32,12 @@ class _CadastroFornecedorState extends State<CadastroFornecedor > {
 
   Widget fieldCPF(){
     return ListTile(
-      title: Text("CPF",
+      title: Text("CNPJ",
           style: const TextStyle(fontWeight: FontWeight.bold)
       ),
       subtitle: TextFormField(
         decoration: InputDecoration(
-          hintText: 'XXX.XXX.XXX-XX',
+          hintText: 'XX.XXX.XXX/XXXX-XX',
           filled: true,
           fillColor: Colors.grey.shade300,
 
