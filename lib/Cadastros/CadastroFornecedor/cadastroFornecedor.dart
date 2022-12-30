@@ -177,7 +177,7 @@ class _CadastroFornecedorState extends State<CadastroFornecedor > {
               primary: Colors.grey.shade300
           ),
           onPressed: (){
-            print("Você está escolehndo uma foto");
+            print("Você está escolhendo uma foto");
           }
       ),
     );
