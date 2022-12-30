@@ -6,6 +6,8 @@
 ![](https://img.shields.io/badge/-Dart-informational?logo=dart&logoColor=white&logoWidth=30)
 ![](https://img.shields.io/badge/-Flutter-13444d?logo=flutter&logoColor=white&logoWidth=30)
 ![](https://img.shields.io/badge/-C-333333?logo=c&logoColor=white&logoWidth=3)
+![](https://img.shields.io/badge/-C++-2b4e72?logo=c++&logoColor=white&logoWidth=3)
+![](https://img.shields.io/badge/-HTML5-fa6900?logo=html5&logoColor=white&logoWidth=3)
 
 <div align="center">
 
