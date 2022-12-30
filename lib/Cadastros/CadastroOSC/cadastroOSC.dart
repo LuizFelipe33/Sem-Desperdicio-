@@ -14,7 +14,7 @@ class _CadastroOSCState extends State<CadastroOSC > {
 
   Widget fieldName(){
     return ListTile(
-      title: Text("Nome",style: const TextStyle(fontWeight: FontWeight.bold)),
+      title: Text("Nome Social",style: const TextStyle(fontWeight: FontWeight.bold)),
       subtitle: TextFormField(
         decoration: InputDecoration(
           hintText: 'Maria Silva*',
@@ -32,12 +32,12 @@ class _CadastroOSCState extends State<CadastroOSC > {
 
   Widget fieldCPF(){
     return ListTile(
-      title: Text("CPF",
+      title: Text("CNPJ",
           style: const TextStyle(fontWeight: FontWeight.bold)
       ),
       subtitle: TextFormField(
         decoration: InputDecoration(
-          hintText: 'XXX.XXX.XXX-XX',
+          hintText: 'XX.XXX.XXX/XXXX-XX',
           filled: true,
           fillColor: Colors.grey.shade300,
 
