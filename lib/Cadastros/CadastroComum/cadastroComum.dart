@@ -177,7 +177,7 @@ class _CadastroComunState extends State<CadastroComun > {
               primary: Colors.grey.shade300
           ),
           onPressed: (){
-            print("Você está escolehndo uma foto");
+            print("Você está escolhendo uma foto");
           }
       ),
     );
